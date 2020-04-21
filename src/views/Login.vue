@@ -27,12 +27,12 @@ export default {
 
   methods:{
     async login() {
-      const { data } = await axios.post('http://laravue.test/api/login', {
+      const { data } = await axios.post('http://lumenvue.test/login', {
         email : this.email,
         password : this.password
       })
 
-      const apiToken = data.api_token;
+      const apiToken = data.result.api_token;
 
       Cookies.set('token', apiToken);
 
